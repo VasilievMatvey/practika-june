@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script defer src="app.js"></script>
+    <title>Holidays</title>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Праздники мира</h1>
+      <label for="year">Выберите год:</label>
+      <input
+        name="input"
+        list="year_list"
+        id="year"
+        type="text"
+        placeholder="2023"
+        autocomplete="on"
+      />
+      <datalist id="year_list"></datalist>
+
+      <br />
+
+      <label for="mounth">Выберите месяц:</label>
+      <input
+        name="input"
+        list="mounth_list"
+        id="mounth"
+        type="text"
+        placeholder="Январь"
+        autocomplete="on"
+      />
+      <datalist id="mounth_list">
+        <option value="January">Январь</option>
+        <option value="Febuary">Февраль</option>
+        <option value="March">Март</option>
+        <option value="April">Апрель</option>
+        <option value="May">Май</option>
+        <option value="June">Июнь</option>
+        <option value="July">Июль</option>
+        <option value="August">Август</option>
+        <option value="September">Сентябрь</option>
+        <option value="October">Октябрь</option>
+        <option value="November">Ноябрь</option>
+        <option value="December">Декабрь</option>
+      </datalist>
+      <br />
+      <label for="country">Выберите страну:</label>
+      <input
+        name="input"
+        list="country_cod"
+        id="country"
+        type="text"
+        placeholder="Russia"
+        autocomplete="on"
+      />
+      <datalist class="datalist" id="country_cod"></datalist>
+      <br />
+      <button class="button" type="button" onclick="holidayDate()">
+        Выполнить запрос
+      </button>
+    </div>
+    <div class="list"></div>
+    <div class="facts">
+      <p class="fact"></p>
+    </div>
+  </body>
+</html>
