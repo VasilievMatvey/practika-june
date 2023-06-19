@@ -19,6 +19,12 @@ const countryList = () => {
 };
 document.addEventListener("DOMContentLoaded", countryList);
 
+const btn = document.querySelector(".button");
+btn.addEventListener("click", (event) => {
+  event.preventDefault();
+  holidayDate();
+});
+
 const holidayDate = () => {
   year = document.querySelector("#year").value;
   countryCode = document.querySelector("#country").value;
@@ -49,7 +55,7 @@ function createHTML(array) {
     let link = `<a class ='holydayLinks' href = '#' onclick='dateInfo(${mounth.slice(
       5,
       7
-    )}, ${date.slice(8)})'>${array[i].localName}</a> <br/>`;
+    )}, ${date.slice(8)})'>${array[i].localName}</a>  `;
     divList.insertAdjacentHTML("beforeend", link);
   }
 }
