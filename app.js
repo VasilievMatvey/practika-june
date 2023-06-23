@@ -1,3 +1,4 @@
+//создаём динамический список стран через запрос к api, который загружается сразу после загрузки Dom дерева
 const countryList = () => {
   fetch(`https://date.nager.at/api/v3/AvailableCountries`)
     .then((response) => {
@@ -19,12 +20,14 @@ const countryList = () => {
 };
 document.addEventListener("DOMContentLoaded", countryList);
 
+//прослушивание события на кнопку и вызов функции
 const btn = document.querySelector(".button");
 btn.addEventListener("click", (event) => {
   event.preventDefault();
   holidayDate();
 });
 
+//функция делает запрос к api и полученную информацию отправляет в sortArr
 const holidayDate = () => {
   year = document.querySelector("#year").value;
   mounth = document.querySelector("#mounth").value;
@@ -44,6 +47,7 @@ const holidayDate = () => {
     });
 };
 
+//функция сортирует праздники по месяцу, который выбрал пользователь, и добавляет подходящие в массив
 function sortArr(arr, mounth) {
   let numberOfMounth;
   let mounthName;
@@ -119,6 +123,7 @@ function sortArr(arr, mounth) {
   createHTML(sortingArr, mounthName);
 }
 
+//создаёт html-код и выводит его на страницу (выводятся названия праздников в выбранном пользователем месяце)
 function createHTML(array, mounth) {
   const divList = document.querySelector(".list");
   if (divList.childElementCount > 1) {
@@ -145,6 +150,7 @@ function createHTML(array, mounth) {
   }
 }
 
+//из api numbersapi получает рандомный факт о дате и выводит его на страницу
 function dateInfo(mounth, date) {
   fetch(`http://numbersapi.com/${mounth}/${date}/date`)
     .then((response) => {
