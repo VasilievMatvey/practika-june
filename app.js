@@ -1,3 +1,10 @@
+const yearList = document.getElementById("year_list");
+for (let i = 1970; i <= 2023; i++) {
+  const opt = document.createElement("option");
+  opt.value = i;
+  opt.text = i; // добавить отображение текста
+  yearList.appendChild(opt);
+}
 //создаём динамический список стран через запрос к api, который загружается сразу после загрузки Dom дерева
 const countryList = () => {
   fetch(`https://date.nager.at/api/v3/AvailableCountries`)
@@ -157,6 +164,8 @@ function dateInfo(mounth, date) {
       return response.text();
     })
     .then((value) => {
+      const factsDiv = document.querySelector(".facts");
+      factsDiv.style.visibility = "visible";
       const fact = document.querySelector(".fact");
       fact.innerHTML = `Этот день в истории: ${value}`;
     });

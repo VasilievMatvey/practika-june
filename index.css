@@ -5,7 +5,7 @@
   margin: 0;
   font-family: "Poppins", sans-serif;
   font-family: "Roboto", sans-serif;
-  background-color: #7cff70;
+  background-color: #a0a0a0;
   margin: auto;
 }
 
@@ -60,9 +60,6 @@
   align-items: center;
   flex-direction: column;
 }
-.fact {
-  text-align: center;
-}
 .list {
   line-height: 160%;
   padding-bottom: 1%;
@@ -72,12 +69,6 @@ h1 {
   padding-bottom: 1%;
 }
 
-.fact {
-  background-color: white;
-  padding: 10px 10px 10px 10px;
-  border: 1px solid black;
-  border-radius: 15px;
-}
 .holydayLinks {
   text-decoration: none;
   color: black;
@@ -87,7 +78,15 @@ h1 {
   text-decoration: underline;
 }
 .facts {
+  border-radius: 15px;
+  background: white;
+  padding: 10px 10px 10px 10px;
+  border: 1px solid black;
   padding-bottom: 3%;
+  visibility: hidden;
+}
+.fact {
+  background-color: #fff;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
